@@ -31,15 +31,52 @@ Page({
    */
   onShow: function () {
     //加载轮播图
-    var adv = Bmob.Object.extend("adv");
-    var advQuery = new Bmob.Query(adv);
+    const adv = Bmob.Object.extend("adv");
+    const advQuery = new Bmob.Query(adv);
     advQuery.equalTo("is_show",1);
     advQuery.find({
-      success:function(results){
-        console.log(results);
+      success:(results)=>{
+        const data = [];
+        for (let object of results) {
+          data.push({
+            id: object.get('good_id'),
+            url: object.get('adv')
+          })
+        }
+        this.setData({
+          banner: data
+        })
       },
-      error:function(error){
+      error:(error)=>{
+        console.log("查询失败");
+      }
+    });
 
+    //查询推荐的商品
+    var Good=Bmob.Object.extend("good");
+    var query=new Bmob.Query(Good);
+    query.equalTo("is_delete",0);
+    query.equalTo("is_rec",1);
+    query.find({
+      success:(result)=>{
+        var goodsArray=new Array();
+        for(var i=0;i<result.length;i++){
+          var object=result[i];
+          var class_value='';
+          if(i ==0 || i%2==0){
+            class_value='left-box';
+          }else{
+            class_value='right-box';
+          }
+          var t = { menu_logo: object.get('menu_logo'), menu_name: object.get('menu_name'), id: object.id, price: object.get('price'), class_value: class_value}
+          goodsArray.push(t);
+        }
+        this.setData({
+          goods:goodsArray
+        })
+      },
+      error:(error)=>{
+        console.log("商品查询失败");
       }
     });
   },

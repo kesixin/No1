@@ -1,1 +1,16 @@
-<view>分类</view>
+<view>
+  <scroll-view class='swipter-nav' scroll-y="true" style='height:{{winHeight}}px;width:100px' bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class='swiper-vertical-tab'>
+      <view wx:for="{{menu}}" wx:key="item" class="{{currentType==item.id?'on':''}}" bindtap='chooseType' data-foodtype="{{item.id}}">{{item.foodType}}</view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class='swiper-vertical-box' scroll-y="true" style="height:{{winHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="vertical-list">
+      <black>
+        <view class='noShop'>暂无商品</view>
+      </black>
+    </view>
+    
+  </scroll-view>
+</view>

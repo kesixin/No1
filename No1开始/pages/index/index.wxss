@@ -1,21 +1,45 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.logo {
+  display: block;
+  margin: 40px auto;
+  width: 92px;
+  height: 82px;
+}
+.slide-image{  
+    width: 100%;  
+}
+.desc{ display: flex; align-items: center;justify-content: space-between; padding: 20rpx 0 ;}
+.desc view{display: flex; align-items: center; flex: 1; font-size: 12px; padding-left: 5%}
+.desc view image{ width: 20px; height: 20px; margin-right: 5rpx}
+.left-box{
+  float:left;
+  margin-right:5.33%;
+  margin-left:4%;
+  margin-top:3.75%;
+  width:42.6%;
+  height: 23.9%;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.right-box{
+  float:right;
+  margin-top:3.75%;
+  margin-right:4%;
+  width:42.6%;
+  height: 23.9%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.goods-img{
+  width:100%;height:160px; border: 1px solid #efefef;
 }
 
-.usermotto {
-  margin-top: 200px;
+.good-name{
+  text-align:center;
+  font-size: 15px;
+  display:block;
+text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden; 
+}
+
+.good-price{
+  text-align:center;
+  color:red;
+  font-size: 15px;
 }

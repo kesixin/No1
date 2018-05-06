@@ -1,2 +1,41 @@
-<swiper style="height:200px;" indicator-dots="{{indicatorDots}}">
+<swiper style="height:200px;" indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+  <block wx:for="{{ banner }}" wx:key="item">
+    <swiper-item>
+      <navigator url="/pages/good/index?id={{item.id}}">
+        <image src="{{item.url}}" class='slide-image' mode='aspectFill'></image>
+      </navigator>
+    </swiper-item>
+  </block>
 </swiper>
+<view class="desc">
+  <view>
+    <image src="../../images/ok.png"/>
+    品牌保障
+  </view>
+  <view>
+    <image src='../../images/bao.png' />
+    担保交易
+  </view>
+  <view>
+    <image src='../../images/serven.png'/>
+    7天包退
+  </view>
+</view>
+<view class="container">
+    <view class="zan-panel" style="border-top:0px;border-bottom:0px;">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd" style="font-weight:bold;">推荐商品</view>
+      <view class="zan-cell__ft smallsize" bindtap="more">全部商品</view>
+    </view>
+        
+        <view wx:for="{{goods}}" wx:key="good" wx:for-index="idx" class="{{item.class_value}}">
+        <navigator url="/pages/good/index?id={{item.id}}">
+          <image class="goods-img" src="{{item.menu_logo}}" mode='aspectFill'/>
+          <view class="good-name">{{item.menu_name}}</view>
+          <view class="good-price">￥{{item.price}}</view>
+        </navigator>
+        </view>
+        
+       
+    </view>
+</view>
