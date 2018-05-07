@@ -10,6 +10,8 @@ Page({
   data: {
     currentTab:0,
     currentType:0,
+    winWidth:null,
+    winHeight:null,
     menu:[],
   },
 

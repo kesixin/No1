@@ -1,4 +1,4 @@
-<view>
+<view class="book-box">
   <scroll-view class='swipter-nav' scroll-y="true" style='height:{{winHeight}}px;width:100px' bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
     <view class='swiper-vertical-tab'>
       <view wx:for="{{menu}}" wx:key="item" class="{{currentType==item.id?'on':''}}" bindtap='chooseType' data-foodtype="{{item.id}}">{{item.foodType}}</view>
@@ -6,10 +6,30 @@
   </scroll-view>
 
   <scroll-view class='swiper-vertical-box' scroll-y="true" style="height:{{winHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
-    <view class="vertical-list">
-      <black>
+    <view wx-if="{{currentType==item.id}}" class="vertical-list" wx:for="{{menu}}" wx:key="foodType">
+      <text class='title'>{{item.foodType}}</text>
+      <block wx:if="{{item.data.length}}">
+      <view class='type-detail'>
+        <view wx:for="{{item.data}}" wx:key="foodDetail" wx:for-index="jdx">
+          <navigator url="/pages/good/index?id={{item.id}}">
+            <image src="{{item.menu_logo}}" mode='aspectFill'></image>
+            <view class='book-detail'>
+              <text>{{item.menu_name}}</text>
+              <view>
+                <text class='money'>￥{{item.price}}</text>
+                <view class='operations smallsize'>
+                  销量：{{item.sale}}
+                </view>
+              </view>
+
+            </view>
+          </navigator>
+        </view>
+        </view>
+      </block>
+      <block wx:else>
         <view class='noShop'>暂无商品</view>
-      </black>
+      </block>
     </view>
     
   </scroll-view>

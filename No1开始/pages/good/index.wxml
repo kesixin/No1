@@ -1,0 +1,77 @@
+<swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}" class='swiper'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src='{{item}}' class='slide-image' width="355" height="240" mode='aspectFit' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="container">
+  <view class="zan-panel" style="margin-top:0px">
+    <view class="zan-cell">
+      <view class="zan-cell__bd" style="">{{good_info.menu_name}}</view>
+      <view class="zan-cell__ft" style="color:red">￥{{good_info.price}}</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd smallsize">运费：￥10.00 - 15.00</view>
+      <view class="zan-cell__ft smallsize">剩余:{{good_info.good_number}}</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <button class="zan-btn zan-btn--mini zan-btn--danger zan-btn--plain">满减</button>
+        <button class="zan-btn zan-btn--mini zan-btn--danger zan-btn--plain">包邮</button>
+      </view>
+      <view class="zan-cell__ft" style="font-size:12px">满69元，包邮</view>
+    </view>
+  </view>
+
+  <view class="zan-panel" style="height:40px;">
+    <view class="zan-cell">
+      <image src="../../images/ok.png" style="width:20px;height:20px" />
+      <view class="zan-cell__bd" style="font-size:12px">
+        店铺认证
+      </view>
+      <image src="../../images/ok.png" style="width:20px;height:20px" />
+      <view class="zan-cell__bd" style="font-size:12px">
+        担保交易
+      </view>
+    </view>
+  </view>
+
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd" style="">商品详情</view>
+    </view>
+    <view style='padding-bottom:60rpx;'>
+      <view class="desc" style="margin:15px">
+        <import src="../../utils/wxParse/wxParse.wxml" />
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='Bill'>
+  <view class="takeBill {{showCart?'':'bdt'}}">
+    <view class="icon-wrap" bindtap="index">
+      <view class="zan-icon zan-icon-home" style="font-size: 15px"></view>
+      <view style="font-size: 11px;">首页</view>
+    </view>
+    <view class="icon-wrap" bindtap="cart">
+      <view class="zan-icon zan-icon-shopping-cart" style="font-size: 15px;"></view>
+      <view class="icon-classname" style="font-size: 11px;;">购物车</view>
+    </view>
+    <button class="box-cart" bindtap="placeOrder" data-name="cart">
+      加入购物车
+    </button>
+    <button class="box-right" bindtap="placeOrder" data-name="order">
+      立即购买
+    </button>
+  </view>
+</view>
+
+<!--弹出框-->
+<view class='commodity_screen' bindtap='hideModal' wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class='commodity_attr_box' wx:if="{{showModalStatus}}"></view>

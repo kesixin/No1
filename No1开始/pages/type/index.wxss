@@ -1,5 +1,6 @@
 /* pages/type/index.wxss */
-
+.book-box{ display: flex;}
+.book-box,.order-box{width:100%;position:relative;box-sizing:border-box;}
 .swiper-vertical-tab{width:100px;position:absolute;left:0px;top:0;min-height:100%;}
 .swiper-vertical-tab view{height:50px;font-size:15px;color:#505050;text-align:center;box-sizing:border-box;padding-top:12px;}
 .swiper-vertical-tab{background:#eee;}
@@ -8,4 +9,21 @@
 .swiper-vertical-box{box-sizing:border-box; flex: 1;}
 .swiper-vertical-box .vertical-list{height:300px;}
 .swiper-vertical-box .vertical-list .title{height:40px;padding-left:20px;background:#f5f5f5;color:#646464;line-height:40px;font-size:15px;display:block;}
+.type-detail{background:#fff;padding-bottom:10px;}
+.type-detail>view{border-bottom:1px solid #E5E5E5;margin-left:10px;overflow:hidden;padding-left:80px;box-sizing:border-box;position:relative;height:92px;width:100%;margin-bottom:-1px;}
+.type-detail view image{width:70px;height:70px;border-radius:6px;margin-top:10px;border:1px solid #ccc;float:left;margin-bottom:10px;position:absolute;left:0;top:0;}
+
+.book-detail{ padding-right: 20px;}
+.book-detail>text{font-size:15px;color:#505050;margin-top:10px;display:block;
+text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden; font-weight: bold;
+ }
+.book-detail button,.book-result-detail button{float:left;width:27px;height:28px;border-radius:14px;}
+.book-detail>view text{float:left;}
+.book-detail>view view{float:left;}
+.book-detail>view{width:100%;overflow:hidden;position:relative;height:28px; display: flex; align-items: center; justify-content: space-between}
+.book-detail button.reduce,.book-result-detail button.reduce{background:url(http://bmob-cdn-8770.b0.upaiyun.com/2017/03/01/3b2b07294075d7b78025de3a115733c1.png) no-repeat;background-size:100% auto;}
+.book-detail button.add,.book-result-detail button.add{background:url(http://bmob-cdn-8770.b0.upaiyun.com/2017/03/01/23438bf040336dd980b7bfdd294d0265.png) no-repeat;background-size:100% auto;}
+.book-detail .money{font-size:15px;color:#fa4b22;line-height:27px;}
+.operations text{line-height:27px;color:#333;width:35px;display:block;text-align:center;}
+
 .noShop{ text-align: center; margin-top: 40rpx; font-size: 28rpx; color: #999}

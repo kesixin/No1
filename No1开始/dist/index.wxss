@@ -1,1 +1,4 @@
 @import "cell/index.wxss";
+@import "btn/index.wxss";
+@import "icon/index.wxss";
+@import "panel/index.wxss";

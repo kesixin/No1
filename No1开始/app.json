@@ -4,6 +4,7 @@
     "pages/type/index",
     "pages/cart/index",
     "pages/center/index",
+    "pages/good/index",
     "pages/logs/logs"
   ],
   "window": {

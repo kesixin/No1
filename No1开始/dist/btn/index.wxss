@@ -1,0 +1,83 @@
+.zan-btn {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 2px;
+  border: 1rpx solid #e5e5e5;
+  font-size: 16px;
+  line-height: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.zan-btn::after {
+  display: none;
+}
+.zan-btns {
+  margin: 15px;
+}
+
+/* type */
+.zan-btn--primary {
+  color: #fff;
+  background-color: #4b0;
+  border-color: #0a0;
+}
+
+.zan-btn--warn {
+  color: #fff;
+  background-color: #f85;
+  border-color: #f85;
+}
+
+.zan-btn--danger {
+  color: #fff;
+  background-color: #f44;
+  border-color: #e33;
+}
+
+/* size */
+.zan-btn--small {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.zan-btn--mini {
+  display: inline-block;
+  line-height: 21px;
+  height: 22px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.zan-btn--large {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+  line-height: 50px;
+  height: 50px;
+}
+
+/* plain */
+.zan-btn--plain.zan-btn {
+  background-color: transparent;
+}
+.zan-btn--plain.zan-btn--primary {
+  color: #06BF04;
+}
+.zan-btn--plain.zan-btn--warn {
+  color: #FF6600;
+}
+.zan-btn--plain.zan-btn--danger {
+  color: #FF4444;
+}
