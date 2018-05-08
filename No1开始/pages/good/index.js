@@ -163,9 +163,9 @@ Page({
   },
   showModal:function(){
     var animation=wx.createAnimation({
-      duration:200,
-      timingFunction:"linear",
-      delay:0
+      duration: 200,//动画持续时间
+      timingFunction: "linear",//定义动画的效果
+      delay: 0 //动画延迟时间
     })
     this.animation=animation;
     animation.translateY(300).step();
@@ -173,8 +173,30 @@ Page({
       animationData:animation.export(),
       showModalStatus:true
     })
+    setTimeout(function(){
+      animation.translateY(0).step()
+      this.setData({
+        animationData:animation.export()
+      })
+    }.bind(this),200)
   },
   hideModal:function(){
-
+    var animation=wx.createAnimation({
+      duration: 200,//动画持续时间
+      timingFunction: "linear",//定义动画的效果
+      delay: 0//动画延迟时间
+    })
+    this.animation=animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData:animation.export()
+    })
+    setTimeout(function(){
+      animation.translateY(0).step();
+      this.setData({
+        animationData:animation.export(),
+        showModalStatus:false
+      })
+    }.bind(this),200)
   }
 })
