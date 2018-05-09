@@ -1,7 +1,8 @@
 var that;
+var Zan = require('../../dist/index');
 var Bmob=require("../../utils/bmob.js");
 const WxParse=require("../../utils/wxParse/wxParse.js");
-Page({
+Page(Object.assign({},Zan.Quantity,{
 
   /**
    * 页面的初始数据
@@ -11,6 +12,7 @@ Page({
     autoplay:true,
     interval:4000,
     duration:1000,
+    hiddenModal: true,
     quantity1:{
       quantity:1,
       min:1,
@@ -198,5 +200,17 @@ Page({
         showModalStatus:false
       })
     }.bind(this),200)
+  },
+  click_cancel:function(){
+    this.hideModal();
+  },
+  handleZanQuantityChange(e){
+    var componentId=e.componentId;
+    var quantity = e.quantity;
+
+    this.setData({
+      [`${componentId}.quantity`]:quantity
+    });
+
   }
-})
+}))

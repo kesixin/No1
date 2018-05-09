@@ -1,3 +1,5 @@
+<!--import template文件-->
+<import src="/dist/quantity/index.wxml" /> 
 <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}" class='swiper'>
   <block wx:for="{{imgUrls}}">
     <swiper-item>
@@ -74,33 +76,35 @@
 
 <!--弹出框-->
 <view class='commodity_screen' bindtap='hideModal' wx:if="{{showModalStatus}}"></view>
-<view animation="{{animationData}}" class='commodity_attr_box' wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class='commodity_attr_box' wx:if="{{showModalStatus}}">
 
-<!--对话框-->
-<view class='zan-panel' style='margin-top:0px'>
-  <view class='zan-cell'>
-    <image src='{{good_info.menu_logo}}' style='height:60px;width:60px;margin-right:10px' />
-    <view class='zan-cell__bd'>{{good_info.menu_name}}</view>
-    <view class='zan-cell__ft'>￥{{good_info.price}}</view>
-    <view class="zan-icon zan-icon-close" style="font-size: 15px;position:relative;top:-30px;right:-10px" bindtap="click_cancel"></view>
-  </view>
-  <view class='zan-cell'>
-    <view class='zan-cell__bd smallsize'>运费：$10.00 - 15.00</view>
-    <view class='zan-cell__ft smallsize'>剩余：{{good_info.good_number}}</view>
-  </view>
-  <view class='zan-cell'>
-    <view class='zan-cell__bd'>
-      购买数量：
+  <!--对话框-->
+  <view class='zan-panel' style='margin-top:0px'>
+    <view class='zan-cell'>
+      <image src='{{good_info.menu_logo}}' style='height:60px;width:60px;margin-right:10px' />
+      <view class='zan-cell__bd'>{{good_info.menu_name}}</view>
+      <view class='zan-cell__ft'>￥{{good_info.price}}</view>
+      <view class="zan-icon zan-icon-close" style="font-size: 15px;position:relative;top:-30px;right:-10px" bindtap="click_cancel"></view>
     </view>
-    <view class='zan-cell__ft'>
-      <template is="zan-quantity" data="{{ ...quantity1,componentId: 'quantity1' }}" />
+    <view class='zan-cell'>
+      <view class='zan-cell__bd smallsize'>运费：$10.00 - 15.00</view>
+      <view class='zan-cell__ft smallsize'>剩余：{{good_info.good_number}}</view>
+    </view>
+    <view class='zan-cell'>
+      <view class='zan-cell__bd'>
+        购买数量：
+      </view>
+      <view class='zan-cell__ft'>
+      <!-- 使用template -->
+        <template is="zan-quantity" data="{{ ...quantity1,componentId: 'quantity1' }}" />
+      </view>
     </view>
   </view>
-</view>
 
-<!--对话框按钮-->
-<view class='btn-view' bindtap='{{actionType}}'>
-  <view class="btn-cancel">
-          下一步
+  <!--对话框按钮-->
+  <view class='btn-view' bindtap='{{actionType}}'>
+    <view class="btn-cancel">
+      下一步
+    </view>
   </view>
 </view>
