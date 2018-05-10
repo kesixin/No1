@@ -1,6 +1,7 @@
 var that;
 var Zan = require('../../dist/index');
 var Bmob=require("../../utils/bmob.js");
+var common=require("../../utils/common.js");
 const WxParse=require("../../utils/wxParse/wxParse.js");
 Page(Object.assign({},Zan.Quantity,{
 
@@ -17,7 +18,8 @@ Page(Object.assign({},Zan.Quantity,{
       quantity:1,
       min:1,
       max:20
-    }
+    },
+    actionType:'payOrder',
   },
 
   /**
@@ -211,6 +213,41 @@ Page(Object.assign({},Zan.Quantity,{
     this.setData({
       [`${componentId}.quantity`]:quantity
     });
+
+  },
+  addCart:function(){
+    //购物车数据放进本地缓存
+    var id = this.data.good_info.id;
+    var number = this.data.quantity1.quantity;
+    var price = this.data.good_info.price;
+    var name = this.data.good_info.menu_name;
+    var pic = this.data.good_info.menu_logo;
+    var good_number =  this.data.good_info.good_number;
+    var cartResult = new Array();
+    if(parseInt(number)>parseInt(good_number)){
+      common.showModal("存货不足！");
+      return false;
+    }
+    var detailArray = {id:id,number:number,price:price,name:name,pic:pic,good_number:good_number,active:true};
+    var oldcartResult = new Array();
+    oldcartResult=wx.getStorageSync('cartResult');
+    if(!oldcartResult){
+      cartResult.push(detailArray);
+      wx.setStorage({
+        key: 'cartResult',
+        data: cartResult
+      })
+    }else{
+      oldcartResult.push(detailArray);
+      wx.setStorage({
+        key: 'cartResult',
+        data: oldcartResult
+      })
+    }
+    //console.log(wx.getStorageSync('cartResult'));
+    wx.reLaunch({
+      url: '../cart/index',
+    })
 
   }
 }))
