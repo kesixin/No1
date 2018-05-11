@@ -1,1 +1,10 @@
-<view>我的</view>
+<view class="server">
+  <contact-button type="default-dark" size="27" session-from="weapp"></contact-button>
+</view>
+
+<view class="zan-pannel">
+  <view class="g-bda-userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
