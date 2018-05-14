@@ -43,3 +43,9 @@ text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;  -w
   color:red;
   font-size: 15px;
 }
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}

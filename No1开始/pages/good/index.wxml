@@ -63,7 +63,7 @@
     </view>
     <view class="icon-wrap" bindtap="cart">
       <view class="zan-icon zan-icon-shopping-cart" style="font-size: 15px;"></view>
-      <view class="icon-classname" style="font-size: 11px;;">购物车</view>
+      <view class="icon-classname" style="font-size: 11px;">购物车</view>
     </view>
     <button class="box-cart" bindtap="placeOrder" data-name="cart">
       加入购物车

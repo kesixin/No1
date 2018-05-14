@@ -21,6 +21,18 @@ Page({
         }
       })
     }
+  },
+  cart:function(){
+    //跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
+    wx.switchTab({
+      url: '../cart/index',
+    })
+  },
+  feedback:function(){
+    wx.navigateTo({
+      //保留当前页面，跳转到应用内的某个页面
+      url: './feedback/feedback',
+    })
   }
 
 })

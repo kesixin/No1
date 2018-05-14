@@ -3,3 +3,4 @@
 @import "icon/index.wxss";
 @import "panel/index.wxss";
 @import "quantity/index.wxss";
+@import "helper/index.wxss";

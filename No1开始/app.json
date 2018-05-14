@@ -5,7 +5,7 @@
     "pages/cart/index",
     "pages/center/index",
     "pages/good/index",
-    "pages/logs/logs"
+    "pages/order/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,0 +1,7 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on':''}}" data-current="0" bindtap="swichNav">全部</view>
+  <view>待付款</view>
+  <view>待发货</view>
+  <view>待收货</view>
+  <view>已完成</view>
+</view>

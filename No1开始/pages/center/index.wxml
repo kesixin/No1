@@ -8,3 +8,69 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 </view>
+
+<view class='zan-panel' style='border-top:0px;border-bottom:0px;'></view>
+
+<view class='container'>
+  <view class='zan-panel' style='border-top:0px;border-bottom:0px;'>
+    <view class='zan-cell'>
+      <view class='zan-cell__bd'>
+        <view class='zan-pull-left'>我的订单</view>
+        <navigator url='/pages/order/index'>
+          <view class='zan-pull-right smallsize'>查看全部订单 ></view>
+        </navigator>
+      </view>
+    </view>
+    <view class='zan-cell' style='margin:0px;padding:12px 0px;'>
+      <view class='zan-cell__bd'>
+        <view class='icon-wrap'>
+          <navigator url="../order/index?id=1">
+            <view class='zan-icon zan-icon-topay' style='font-size:25px;'></view>
+            <view class='icon-classname smallsize'>待付款</view>
+          </navigator>
+        </view>
+        <view class='icon-wrap'>
+          <navigator url='../order/index?id=2'>
+            <view class='zan-icon zan-icon-tosend' style='font-size:25px;'></view>
+            <view class='icon-classname smallsize'>待发货</view>
+          </navigator>
+        </view>
+        <view class='icon-wrap'>
+          <navigator url='../order/index?id=3'>
+            <view class='zan-icon zan-icon-tosend' style='font-size:25px;'></view>
+            <view class='icon-classname smallsize'>待发货</view>
+          </navigator>
+        </view>
+        <view class='icon-wrap'>
+          <navigator url='../order/index?id=4'>
+            <view class='zan-icon zan-icon-sign' style='font-size:25px;'></view>
+            <view class='icon-classname smallsize'>已完成</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='zan-panel' style='border-top:0px;border-bottom:0px;'>
+    <view class='zan-cell'>
+      <view class='zan-cell__bd' bindtap='cart'>
+        <view class='zan-pull-left'>购物车</view>
+        <view class='zan-pull-right smallsize'>></view>
+      </view>
+    </view>
+    <view class='zan-cell'>
+      <view class='zan-cell__bd' bindtap='feedback'>
+        <view class='zan-pull-left'>反馈建议</view>
+        <view class='zan-pull-right smallsize'>></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page__ft">
+      <view class="page__bd page__bd_spacing">
+        <view class="weui-footer ">
+          <view class="weui-footer__text">Copyright © 2013-2018 www.bmob.cn</view>
+        </view>
+      </view>
+  </view>
+</view>
