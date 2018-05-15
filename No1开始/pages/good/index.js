@@ -249,5 +249,8 @@ Page(Object.assign({},Zan.Quantity,{
       url: '../cart/index',
     })
 
+  },
+  payOrder:function(){
+    console.log("dd");
   }
 }))

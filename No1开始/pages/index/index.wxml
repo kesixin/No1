@@ -1,4 +1,4 @@
-<button  open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button>
+<button  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="{{showView?'show':'hide'}}" bindtap='change'>授权</button>
 <swiper style="height:200px;" indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
   <block wx:for="{{ banner }}" wx:key="item">
     <swiper-item>
