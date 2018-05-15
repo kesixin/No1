@@ -251,6 +251,27 @@ Page(Object.assign({},Zan.Quantity,{
 
   },
   payOrder:function(){
-    console.log("dd");
+    var id=this.data.good_info.id;
+    var number = this.data.quantity1.quantity;
+    var price = this.data.good_info.price;
+    var name = this.data.good_info.menu_name;
+    var pic = this.data.good_info.menu_logo;
+    var good_number = this.data.good_info.good_number;
+    if(parseInt(number)>parseInt(good_number)){
+      common.showModal("存货不足！");
+      return false;
+    }
+    var detailArray=new Array();
+    detailArray = {number:number,price:price,name:name,pic:pic};
+    var orderResult = new Array();
+    orderResult.push(detailArray);
+    wx.setStorage({
+      key: 'orderResult',
+      data: orderResult,
+    });
+    wx.redirectTo({
+      url: '../payorder/index',
+    })
+
   }
 }))

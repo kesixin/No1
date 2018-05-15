@@ -1,0 +1,6 @@
+<view class="container">
+  <form bindsubmit="placeOrder">
+    <view class="">
+    </view>
+  </form>
+</view>

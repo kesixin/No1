@@ -6,7 +6,9 @@
     "pages/center/index",
     "pages/good/index",
     "pages/order/index",
-    "pages/shop/index"
+    "pages/shop/index",
+    "pages/payorder/index"
+
   ],
   "window": {
     "backgroundTextStyle": "dark",
