@@ -16,11 +16,26 @@ Page({
    */
   onLoad: function (options) {
     that=this;
-    if(options.id){
+    if(options.id){n
       that.setData({
         currentTab:options.id
       })
     }
+  },
+  onShow:function(){
+    var currentUser = Bmob.User.current();
+    var Order = Bmob.Object.extend("Order");
+    var query = new Bmob.Query(Order);
+    query.equalTo("orderUser",currentUser.id);
+    query.descending("createdAt");
+    query.find({
+      success:function(result){
+
+      },
+      error:function(error){
+        
+      }
+    })
   },
   swichNav:function(e){
     if (this.data.currentTab === e.target.dataset.current){

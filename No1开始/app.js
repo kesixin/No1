@@ -4,6 +4,7 @@ Bmob.initialize("1d98cd6150536c8f790aa43e0b346ae3","a276fdd6e7a4192c93e9b23daa0f
 
 App({
   onLaunch: function () {
+    //wx.clearStorageSync();
     //调用API从本地缓存中获取数据
     try{
       var value = wx.getStorageSync('openid');
