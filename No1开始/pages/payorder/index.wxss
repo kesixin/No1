@@ -1,0 +1,6 @@
+.Bill-layer{width: 100%;height:100%;background:#000;opacity:0.5;position:fixed;left:0;top:0;z-index:1;}
+.Bill{position:fixed;left:0;bottom:0;width:100%;z-index:2;}
+.takeBill{height:44px;background:#fff;position:relative;}
+.takeBill .box-right{width:140px;height:45px;background:#d81e06;position:absolute;right:0;top:-1px;border-radius:0;color:#fff;line-height:45px;text-align:center;font-size:15px}
+.takeBill .box-cart{width:140px;height:45px;position:absolute;right:140px;top:-1px;border-radius:0;line-height:45px;text-align:center;font-size:15px}
+.bdt{border-top:1px solid #e6e6e6;}

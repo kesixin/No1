@@ -217,5 +217,56 @@ Page({
       }
     }
     this.setGoodsList(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+  },
+  deleteSelected:function(){
+    var list = this.data.goodsList.list;
+    for(var i=0;i<list.length;i++){
+      var curItem = list[i];
+      if(curItem.active){
+        list.splice(i--,1);
+      }
+    }
+    this.setGoodsList(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+  },
+  toPayOrder:function(){
+    var that = this;
+    if(this.data.goodsList.noSelect){
+      common.showTip("请选择至少一件商品", "loading");
+      return false;
+    }
+    wx.showLoading();
+
+    //计算价格，判断库存
+    var shopList =[];
+    var shopCarInfoMem=wx.getStorageSync('cartResult');
+    shopList=shopCarInfoMem;
+    if(shopList.length == 0){
+      common.showTip("请选择至少一件商品", "loading");
+      return;
+    }
+    var orderResult = new Array();
+    for(var i=0;i<shopList.length;i++){
+      if(shopList[i].active){
+        //判断库存
+        if(shopList[i].good_number<shopList[i].number){
+          common.showTip(shopList[i].name+"商品库存不足", "loading");
+          return;
+        }else{
+          orderResult.push(shopList[i]);
+        }
+      }
+    }
+    wx.setStorage({
+      key: 'orderResult',
+      data: orderResult,
+    })
+    that.navigateToPayOrder();
+  },
+  navigateToPayOrder:function(){
+    wx.removeStorageSync('cartResult');
+    wx.hideLoading();
+    wx.navigateTo({
+      url: '../payorder/index',
+    })
   }
 })
