@@ -182,6 +182,8 @@ Page({
       })
     },
       function (err) {
+        var orderId="123333"+Date.parse(new Date());
+        
         //没有微信支付，保存订单
         var User = Bmob.Object.extend("_User");
         var currentUser = Bmob.User.current();
@@ -196,7 +198,7 @@ Page({
         order.set("orderDetail", orderDetail);
         order.set("status", 0);
         order.set("userInfo", userInfo);
-        order.set("orderId", "123456789");
+        order.set("orderId", orderId);
         order.save(null, {
           success: function (result) {
             wx.redirectTo({

@@ -4,3 +4,4 @@
 @import "panel/index.wxss";
 @import "quantity/index.wxss";
 @import "helper/index.wxss";
+@import "card/index.wxss";
