@@ -1,6 +1,6 @@
 //app.js
 var Bmob = require('utils/bmob.js');
-Bmob.initialize("1d98cd6150536c8f790aa43e0b346ae3","a276fdd6e7a4192c93e9b23daa0f8132");
+Bmob.initialize("","");
 
 App({
   onLaunch: function () {
